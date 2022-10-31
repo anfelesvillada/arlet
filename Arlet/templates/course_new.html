@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="row">
+    <div class="card col-md-6 offset-md-3 border-primary">
+        <div class="card-header">
+            <span class="font-weight-bold">Crear Ficha</span> 
+        </div>
+        <div class="card-body">
+            <form action="" method="post" class="needs-validation" novalidate>{% csrf_token %}
+                <div class="row">{{ form|crispy }}</div>
+                <br>
+                <div class="d-grid gap-2 d-md-block">
+                    <button class="btn btn-success" type="submit">Guardar</button>
+                    <a class="btn btn-secondary" href="{% url 'course_list' %}">Cancelar</a>
+                </div>                
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
